@@ -24,7 +24,7 @@ class ClientDataForm(FlaskForm):
 
 
 def send_json(data):
-    url = 'https://insurance-made.herokuapp.com/predict'
+    url = '127.0.0.1/predict'
     headers = {'content-type': 'application/json'}
     response = requests.post(url, json=data, headers=headers)
     return response
