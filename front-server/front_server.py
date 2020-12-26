@@ -24,7 +24,7 @@ class ClientDataForm(FlaskForm):
 
 
 def send_json(data):
-    url = 'http://127.0.0.1:5000/predict'
+    url = 'https://insurance-made.herokuapp.com/predict'
     headers = {'content-type': 'application/json'}
     response = requests.post(url, json=data, headers=headers)
     return response
@@ -72,4 +72,4 @@ def predict_form():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.2', debug=True)
+    app.run(host='https://insurance-made.herokuapp.com/')
