@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 
-flask_app = Flask(__name__)
+app = Flask(__name__)
 
 
 def xgb_eval_dev_gamma(yhat, dtrain):
@@ -17,12 +17,12 @@ model_avgclaim.load_model('avg_claims_model.pkl')
 model_claimcounts = pickle.load(open('claim_counts_model.pkl', 'rb'))
 
 
-@flask_app.route('/')
+@app.route('/')
 def index():
     return 'Hello World!'
 
 
-@flask_app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     request_json = request.json
     id_ = request_json['id']
@@ -47,4 +47,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    flask_app.run(debug=True)
+    app.run(debug=True)
