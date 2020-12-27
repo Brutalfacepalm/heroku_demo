@@ -59,7 +59,7 @@ def predict(insurance_data):
 
     prediction_avgclaim = model_avgclaim.predict(df_for_response)
     prediction_claimcounts = [[i + 1, int(v * 100)] for i, v in
-                              enumerate(model_claimcounts.predict_proba(df_for_response)[0].tolist())]
+                              enumerate(model_claimcounts.predict_proba(df_for_response)[:,1].tolist())]
     prediction_claimcounts = sorted(prediction_claimcounts, key=lambda x: x[1], reverse=True)[0]
 
     claimamount = prediction_avgclaim * prediction_claimcounts[0]
