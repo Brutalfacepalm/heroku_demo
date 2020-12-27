@@ -36,9 +36,9 @@
                             <b>{{ response.verdict_avgclaim }}</b>
                         </div>
                     </div>
-                    {% if response.value_claimamount == 'Высокий общий убыток' %}
+                    {% if response.verdict_claimamount == 'Высокий общий убыток' %}
                         <div class="row justify-content-around" style='background-color: rgba(255, 115, 115, 0.5);'>
-                    {% elif response.value_claimamount == 'Умеренный общий убыток' %}
+                    {% elif response.verdict_claimamount == 'Умеренный общий убыток' %}
                         <div class="row justify-content-around" style='background-color: rgba(255, 224, 115, 0.5);'>
                     {% else %}
                         <div class="row justify-content-around" style='background-color: rgba(184, 244, 110, 0.5);'>
